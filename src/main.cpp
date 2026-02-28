@@ -14,38 +14,39 @@
 #define GREEN_PIN 10
 #define BLUE_PIN 11
 
+void setup() {
+  Serial.begin(9600);
 
+  pinMode(RED_PIN, OUTPUT);
+  pinMode(GREEN_PIN, OUTPUT);
+  pinMode(BLUE_PIN, OUTPUT);
 
+  Serial.println("RGB LED System Initialized");
 
-Serial.begin(9600);
+  // Digital ON/OFF test
+  digitalWrite(RED_PIN, HIGH);
+  delay(1000);
 
-pinMode(RED_PIN, OUTPUT);
-pinMode(GREEN_PIN, OUTPUT);
-pinMode(BLUE_PIN, OUTPUT);
+  digitalWrite(RED_PIN, LOW);
+  delay(1000);
+}
 
+void loop() {
+  // Red color
+  analogWrite(RED_PIN, 255);
+  analogWrite(GREEN_PIN, 0);
+  analogWrite(BLUE_PIN, 0);
+  delay(1000);
 
+  // Green color
+  analogWrite(RED_PIN, 0);
+  analogWrite(GREEN_PIN, 255);
+  analogWrite(BLUE_PIN, 0);
+  delay(1000);
 
-Serial.println("RGB LED System Initialized");
-
-digitalWrite(RED_PIN, HIGH);
-delay(1000);
-
-digitalWrite(RED_PIN, LOW);
-delay(1000);
-
-
-
-analogWrite(RED_PIN, 255);
-analogWrite(GREEN_PIN, 0);
-analogWrite(BLUE_PIN, 0);
-delay(1000);
-
-analogWrite(RED_PIN, 0);
-analogWrite(GREEN_PIN, 255);
-analogWrite(BLUE_PIN, 0);
-delay(1000);
-
-analogWrite(RED_PIN, 0);
-analogWrite(GREEN_PIN, 0);
-analogWrite(BLUE_PIN, 255);
-delay(1000);
+  // Blue color
+  analogWrite(RED_PIN, 0);
+  analogWrite(GREEN_PIN, 0);
+  analogWrite(BLUE_PIN, 255);
+  delay(1000);
+}
