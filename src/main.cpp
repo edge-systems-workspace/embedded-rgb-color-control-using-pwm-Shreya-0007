@@ -26,3 +26,9 @@ pinMode(BLUE_PIN, OUTPUT);
 
 
 Serial.println("RGB LED System Initialized");
+
+digitalWrite(RED_PIN, HIGH);
+delay(1000);
+
+digitalWrite(RED_PIN, LOW);
+delay(1000);
